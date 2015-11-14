@@ -26,6 +26,9 @@
     NSURL *url = [FlickrFetcher URLforRecentGeoreferencedPhotos];
 #warning Block Main Thread
     NSData *jsonResults = [NSData dataWithContentsOfURL:url];
+    if (!jsonResults) {
+        return;
+    }
     NSDictionary *propertyListResults = [NSJSONSerialization JSONObjectWithData:jsonResults
                                                                         options:0
                                                                           error:NULL];
