@@ -47,7 +47,7 @@
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
         NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request
-                                                        completionHandler:^(NSURL * _Nullable localfile, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                        completionHandler:^(NSURL *localfile, NSURLResponse *response, NSError *error) {
                                                             if (!error) {
                                                                 if ([request.URL isEqual:self.imageURL]) {
                                                                     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:localfile]];
